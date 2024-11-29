@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './menus.css'; // 공통 CSS 임포트
 
 const Coffee = ({ addToCart }) => {
     const [coffees, setCoffees] = useState([]); // 커피 데이터 상태
@@ -17,21 +18,18 @@ const Coffee = ({ addToCart }) => {
             });
     }, []);
 
-    // const onClickMenu(()=>{})
-
     if (loading) {
-        return <p>Loading...</p>;
+        return <p className="loading">Loading...</p>;
     }
 
     return (
-        <div>
+        <div className="menu-container">
             <h1>커피 메뉴</h1>
-            <ul>
+            <ul className="menu-list">
                 {coffees.map((coffee) => (
                     <li
                         key={coffee.id}
                         onClick={() => addToCart(coffee)}  
-                        style={{ cursor: 'pointer', padding: '10px', border: '1px solid #ccc', margin: '5px 0' }}
                     >
                         {coffee.name} - {coffee.type} - ₩{coffee.price}
                     </li>

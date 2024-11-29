@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import Coffee from './coffee';
-import Dessert from './dessert';
-import Cart from './cart';
+import Coffee from './Coffee';
+import Dessert from './Dessert';
+import Cart from './Cart';
+import './menu.css';
 
 export default function Menu() {
     const [selectedMenu, setSelectedMenu] = useState('coffee'); // 기본값 설정
